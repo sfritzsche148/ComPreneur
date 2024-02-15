@@ -7,6 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ItemsControl>
+            <StackPanel Visibility="Collapsed">
+                <Button Content="Create Company"
+                        Width="200"/>
+                <Button Content="Load Company"
+                        Width="200"
+                        Margin="0, 10, 0, 0"/>
+            </StackPanel>
+        </ItemsControl>
+
+        <ItemsControl x:Name="LoadCompanyPage"
+                      Visibility="Collapsed">
+            <StackPanel>
+                <TextBox Width="200"
+                           Text="Firmenname"/>
+                <Button  Content="Load"
+                         Width="200"/>
+            </StackPanel>
+        </ItemsControl>
+
+        <ItemsControl>
+            <StackPanel>
+                <TextBox Text="Firmenname"
+                         Width="200"/>
+                <TextBox Text="Branche"
+                         Width="200"/>
+                <Button Content="Gründen"
+                        Width="200"/>
+            </StackPanel>
+        </ItemsControl>
     </Grid>
 </Window>
