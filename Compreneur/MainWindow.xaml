@@ -7,27 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ItemsControl>
-            <StackPanel Visibility="Collapsed">
+        <ItemsControl x:Name="StartPage"
+                      Visibility="{Binding StartPageVisibility}">
+            <StackPanel Visibility="Visible">
                 <Button Content="Create Company"
-                        Width="200"/>
+                        Width="200"
+                        Command="{Binding openCreateCompanyPageCommand}"/>
                 <Button Content="Load Company"
                         Width="200"
-                        Margin="0, 10, 0, 0"/>
+                        Margin="0, 10, 0, 0"
+                        Command="{Binding openLoadCompanyPageCommand}"/>
             </StackPanel>
         </ItemsControl>
 
         <ItemsControl x:Name="LoadCompanyPage"
-                      Visibility="Collapsed">
+                      Visibility="{Binding LoadCompanyPageVisibility}" >
             <StackPanel>
                 <TextBox Width="200"
-                           Text="Firmenname"/>
+                         Text="Firmenname"/>
                 <Button  Content="Load"
                          Width="200"/>
             </StackPanel>
         </ItemsControl>
 
-        <ItemsControl>
+        <ItemsControl x:Name="CreateCompanyPage"
+                      Visibility="{Binding CreateCompanyPageVisibility}">
             <StackPanel>
                 <TextBox Text="Firmenname"
                          Width="200"/>
