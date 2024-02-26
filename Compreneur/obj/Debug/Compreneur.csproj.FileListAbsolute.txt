@@ -13,3 +13,4 @@ C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Compreneur.cspro
 C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Compreneur.csproj.CoreCompileInputs.cache
 C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Compreneur.exe
 C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Compreneur.pdb
+C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\App.baml
