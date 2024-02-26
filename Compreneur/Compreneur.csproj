@@ -55,6 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\BusinessUnit.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Service\CheckCompanyExistsService.cs" />
+    <Compile Include="Service\CreateBusinessUnitService.cs" />
+    <Compile Include="Service\CreateCompanyService.cs" />
+    <Compile Include="Service\CreateLocationService.cs" />
+    <Compile Include="Service\LoadBusinessUnitsService.cs" />
+    <Compile Include="Service\LoadCompanyService.cs" />
+    <Compile Include="Service\LoadLocationService.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,6 +75,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\ActionCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -94,5 +107,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
