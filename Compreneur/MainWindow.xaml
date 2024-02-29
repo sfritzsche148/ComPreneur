@@ -18,6 +18,9 @@
                         Width="200"
                         Margin="0, 10, 0, 0"
                         Command="{Binding openLoadCompanyPageCommand}"/>
+                <helix:HelixViewport3D>
+                    <ModelVisual3D x:Name="model" />
+                </helix:HelixViewport3D>
             </StackPanel>
         </ItemsControl>
 

@@ -14,3 +14,6 @@ C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Compreneur.cspro
 C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Compreneur.exe
 C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Compreneur.pdb
 C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\App.baml
+C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Compreneur.csproj.Up2Date
