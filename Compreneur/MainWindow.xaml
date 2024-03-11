@@ -8,126 +8,160 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
         <ItemsControl x:Name="StartPage"
-                      Visibility="{Binding StartPageVisibility}">
-            <StackPanel Visibility="Visible">
-                <Button Content="Create Company"
-                        Width="200"
-                        Command="{Binding openCreateCompanyPageCommand}"/>
-                <Button Content="Load Company"
+                      Visibility="{Binding StartPageVisibility}"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="3"
+                      Grid.Row="0"
+                      Grid.RowSpan="3">
+            <Button Content="Create Company"
+                    Width="200"
+                    Command="{Binding openCreateCompanyPageCommand}" />
+            <Button Content="Load Company"
                         Width="200"
                         Margin="0, 10, 0, 0"
                         Command="{Binding openLoadCompanyPageCommand}"/>
-                <StackPanel Orientation="Horizontal">
-                    <helix:HelixViewport3D x:Name="viewPort" ShowViewCube="False" Height="400" Width="250">
-                        <ModelVisual3D x:Name="modelGB1" Content="{Binding StartPageModel1}">
-                            <ModelVisual3D.Transform>
-                                <ScaleTransform3D ScaleX="2" ScaleY="2" ScaleZ="2"/>
-                            </ModelVisual3D.Transform>
-                        </ModelVisual3D>
-                        
-                    </helix:HelixViewport3D>
-                    <helix:HelixViewport3D x:Name="viewPort2" ShowViewCube="False" Height="300" Width="250">
-                        <ModelVisual3D x:Name="modelGB2" Content="{Binding StartPageModel2}">
-                            <ModelVisual3D.Transform>
-                                <ScaleTransform3D ScaleX="2" ScaleY="2" ScaleZ="2"/>
-                            </ModelVisual3D.Transform>
-                        </ModelVisual3D>
-                    </helix:HelixViewport3D>
-                    <helix:HelixViewport3D x:Name="viewPort3" ShowViewCube="False" Height="300" Width="250">
-                        <ModelVisual3D x:Name="modelGB3" />
-                    </helix:HelixViewport3D>
-                </StackPanel>
-               
-            </StackPanel>
+
+            <helix:HelixViewport3D x:Name="viewPort"
+                                   ShowViewCube="False"
+                                   Height="400"
+                                   Width="200"
+                                   Grid.Column="1">
+                <ModelVisual3D x:Name="modelGB1" Content="{Binding StartPageModel1}">
+                    <ModelVisual3D.Transform>
+                        <ScaleTransform3D ScaleX="2" ScaleY="2" ScaleZ="2"/>
+                    </ModelVisual3D.Transform>
+                </ModelVisual3D>
+
+            </helix:HelixViewport3D>
+            <helix:HelixViewport3D x:Name="viewPort2" 
+                                   ShowViewCube="False"
+                                   Height="300"
+                                   Width="200"
+                                   Grid.Column="2">
+                <ModelVisual3D x:Name="modelGB2" Content="{Binding StartPageModel2}">
+                    <ModelVisual3D.Transform>
+                        <ScaleTransform3D ScaleX="2" ScaleY="2" ScaleZ="2"/>
+                    </ModelVisual3D.Transform>
+                </ModelVisual3D>
+            </helix:HelixViewport3D >
+            <helix:HelixViewport3D x:Name="viewPort3"
+                                   ShowViewCube="False"
+                                   Height="300"
+                                   Width="200"
+                                   Grid.Column="3">
+                <ModelVisual3D x:Name="modelGB3" />
+            </helix:HelixViewport3D>
+
         </ItemsControl>
 
         <ItemsControl x:Name="LoadCompanyPage"
-                      Visibility="{Binding LoadCompanyPageVisibility}" >
-            <StackPanel>
-                <TextBox Width="200"
-                         Text="Firmenname"/>
-                <Button  Content="Load"
+                      Visibility="{Binding LoadCompanyPageVisibility}" 
+                      Grid.Column="1"
+                      Grid.ColumnSpan="3"
+                      Grid.Row="0"
+                      Grid.RowSpan="3">
+
+            <TextBox Width="200"
+                     Text="Firmenname"/>
+            <Button  Content="Load"
                          Width="200"/>
-                <StackPanel Orientation="Horizontal">
-                    <helix:HelixViewport3D x:Name="viewPort4" ShowViewCube="False" Height="300" Width="250">
-                        <ModelVisual3D x:Name="modelGB4" />
-                    </helix:HelixViewport3D>
-                    <helix:HelixViewport3D x:Name="viewPort5" ShowViewCube="False" Height="300" Width="250">
-                        <ModelVisual3D x:Name="modelGB5" />
-                    </helix:HelixViewport3D>
-                    <helix:HelixViewport3D x:Name="viewPort6" ShowViewCube="False" Height="300" Width="250">
-                        <ModelVisual3D x:Name="modelGB6"/>
-                    </helix:HelixViewport3D>
-                </StackPanel>
-            </StackPanel>
+            <helix:HelixViewport3D x:Name="viewPort4" ShowViewCube="False" Height="300" Width="250">
+                <ModelVisual3D x:Name="modelGB4" Content="{Binding StartPageModel1}" />
+            </helix:HelixViewport3D>
+            <helix:HelixViewport3D x:Name="viewPort5" ShowViewCube="False" Height="300" Width="250">
+                <ModelVisual3D x:Name="modelGB5" Content="{Binding StartPageModel2}"/>
+            </helix:HelixViewport3D>
+            <helix:HelixViewport3D x:Name="viewPort6" ShowViewCube="False" Height="300" Width="250">
+                <ModelVisual3D x:Name="modelGB6"/>
+            </helix:HelixViewport3D>
         </ItemsControl>
 
         <ItemsControl x:Name="CreateCompanyPage"
-                      Visibility="{Binding CreateCompanyPageVisibility}">
-            <StackPanel>
-                <TextBox Text="Firmenname"
+                      Visibility="{Binding CreateCompanyPageVisibility}"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="3"
+                      Grid.Row="0"
+                      Grid.RowSpan="3">
+            
+            <TextBox Text="Firmenname"
                          Width="200"/>
-                <TextBox Text="Branche"
-                         Width="200"/>
-                <Button Content="Gründen"
+            <TextBox Text="Branche"
+                Width="200"/>
+            <Button Content="Gründen"
                         Width="200"/>
-                <StackPanel Orientation="Horizontal">
-                    <helix:HelixViewport3D x:Name="viewPort7" ShowViewCube="False" Height="300" Width="250">
-                        <ModelVisual3D x:Name="modelGB7" />
-                    </helix:HelixViewport3D>
-                    <helix:HelixViewport3D x:Name="viewPort8" ShowViewCube="False" Height="300" Width="250">
-                        <ModelVisual3D x:Name="modelGB8" />
-                    </helix:HelixViewport3D>
-                    <helix:HelixViewport3D x:Name="viewPort9" ShowViewCube="False" Height="300" Width="250">
-                        <ModelVisual3D x:Name="modelGB9" />
-                    </helix:HelixViewport3D>
-                </StackPanel>
-            </StackPanel>
+            <helix:HelixViewport3D x:Name="viewPort7" ShowViewCube="False" Height="300" Width="250">
+                <ModelVisual3D x:Name="modelGB7" Content="{Binding StartPageModel1}"/>
+            </helix:HelixViewport3D>
+            <helix:HelixViewport3D x:Name="viewPort8" ShowViewCube="False" Height="300" Width="250">
+                <ModelVisual3D x:Name="modelGB8" Content="{Binding StartPageModel2}"/>
+            </helix:HelixViewport3D>
+            <helix:HelixViewport3D x:Name="viewPort9" ShowViewCube="False" Height="300" Width="250">
+                <ModelVisual3D x:Name="modelGB9" />
+            </helix:HelixViewport3D>
+
         </ItemsControl>
         <ItemsControl x:Name="MainPage" 
-                      Visibility="{Binding MainPageVisibility}">
-            <StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center">
-                    <Button Content="Unternehmensübersicht"
-                            Margin="0, 0, 20, 0"/>
-                    <Button Content="Aufträge"
-                            Margin="20, 0, 20, 0"/>
-                    <Button Content="Mitarbeiter"/>
-                </StackPanel>
-                <!-- Gebäude Liste-->
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel Width="100" HorizontalAlignment="Left">
-                        <Button Content="GB1" 
-                                Margin="0, 40, 0, 20"/>
-                        <Button Content="GB2"
-                                Margin="0, 20"/>
-                        <Button Content="GB3"
-                                Margin="0, 20"/>
-                    </StackPanel>
-                    <!-- Standort View -->
-                   
-                    <!-- Standort Liste-->
-                    <StackPanel Width="100" HorizontalAlignment="Right"
-                                >
-                        <Button Content="GB1" 
-                                Margin="0, 40, 0, 20"/>
-                        <Button Content="GB2"
-                                Margin="0, 20"/>
-                        <Button Content="GB3"
-                                Margin="0, 20"/>
-                    </StackPanel>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center">
-                    <Button Content="Abteilungen"
-                            Margin="0, 0, 20, 0"/>
-                    <Button Content="Sales"
-                            Margin="20, 0, 20, 0"/>
-                    <Button Content="Marketing"/>
-                </StackPanel>
-            </StackPanel>
+                      Visibility="{Binding MainPageVisibility}"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="5"
+                      Grid.Row="0"
+                      Grid.RowSpan="7">
+            <Button Content="Unternehmensübersicht"
+                    Margin="0, 0, 20, 0"
+                    />
+            <Button Content="Aufträge"
+                    Margin="20, 0, 20, 0"
+                    Grid.Column="2"/>
+            <Button Content="Mitarbeiter"
+                    Grid.Column="3"/>
+            <!-- Gebäude Liste-->
+            <Button Content="GB1" 
+                    Margin="0, 40, 0, 20"
+                    Grid.Row="2"/>
+            <Button Content="GB2"
+                    Margin="0, 20"
+                    Grid.Row="3"/>
+            <Button Content="GB3"
+                    Margin="0, 20"
+                    Grid.Row="4"/>
+            <!-- Standort View -->
+
+            <!-- Standort Liste-->
+            <Button Content="GB1" 
+                    Margin="0, 40, 0, 20"
+                    Grid.Column="4"/>
+            <Button Content="GB2"
+                    Margin="0, 20"
+                    Grid.Column="4"/>
+            <Button Content="GB3"
+                    Margin="0, 20"
+                    Grid.Column="5"/>
+            
+            <Button Content="Abteilungen"
+                    Margin="0, 0, 20, 0"
+                    Grid.Row="6"/>
+            <Button Content="Sales"
+                    Margin="20, 0, 20, 0"
+                    Grid.Row="6"/>
+            <Button Content="Marketing"
+                    Grid.Row="6"/>
         </ItemsControl>
     </Grid>
 </Window>

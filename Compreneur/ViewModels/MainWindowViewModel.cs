@@ -79,6 +79,7 @@ namespace Compreneur.ViewModels
 
         public Model3D StartPageModel1 { get; set; }
         public Model3D StartPageModel2 { get; set; }
+        public Model3D StartPageModel3 { get; set; }
 
         public ObservableCollection<Model3D> BuildingModels { get; set; }
 
