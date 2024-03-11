@@ -11,28 +11,35 @@ namespace Compreneur.Service
     internal class LoadLocationService
     {
 
-        public List<Location> locations(DirectoryInfo sourceDirectory, Company company)
+        public List<Location> LoadLocations(DirectoryInfo sourceDirectory, string companyName)
         {
             List<Location> locations = new List<Location>();
 
-            var configFile = sourceDirectory.EnumerateFiles(company.CompanyName + "LocationsConfiguration.txt").FirstOrDefault();
+            var configFile = sourceDirectory.EnumerateFiles(companyName + "LocationsConfiguration.txt").FirstOrDefault();
             
             if (configFile != null)
             {
                 string[] lines = File.ReadAllLines(configFile.FullName);
+                int lineNumber = 0;
 
                 foreach(var line in lines)
                 {
-                    if (!string.IsNullOrEmpty(line))
+                    if (!string.IsNullOrEmpty(line) && lineNumber != 0)
                     {
-                        
+                        locations.Add(new Location()
+                        {
+                            LocationName = "test"
+                        }) ;
                     }
+                    lineNumber++;
                 }
+                return locations;
 
-
+            } else
+            {
+                return null;
             }
 
-            return locations;
         }
     }
 }

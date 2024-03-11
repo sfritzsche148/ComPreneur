@@ -58,6 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Enums\BuildingType.cs" />
+    <Compile Include="Models\Building.cs" />
     <Compile Include="Models\BusinessUnit.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Location.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="Service\CreateBusinessUnitService.cs" />
     <Compile Include="Service\CreateCompanyService.cs" />
     <Compile Include="Service\CreateLocationService.cs" />
+    <Compile Include="Service\LoadBuildingService.cs" />
     <Compile Include="Service\LoadBusinessUnitsService.cs" />
     <Compile Include="Service\LoadCompanyService.cs" />
     <Compile Include="Service\LoadLocationService.cs" />

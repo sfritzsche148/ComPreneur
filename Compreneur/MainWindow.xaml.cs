@@ -27,16 +27,6 @@ namespace Compreneur
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
-            load3dModel();
-        }
-
-        public void load3dModel()
-        {
-            ModelImporter imp = new ModelImporter();
-
-            Model3D myModel = imp.Load("C:\\Users\\Sebastian\\OneDrive\\03_Sonstiges\\Dokumente\\My Games\\Compreneur\\gebäude1.obj");
-
-            model.Content = myModel;
         }
     }
 }

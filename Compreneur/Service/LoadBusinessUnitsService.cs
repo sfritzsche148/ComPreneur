@@ -22,14 +22,21 @@ namespace Compreneur.Service
             {
                 string[] lines = File.ReadAllLines(configFile.FullName);
 
+                int lineNumber = 0;
+
                 foreach(var line in lines)
                 {
-                    BusinessUnit businessUnit = MapToBusinessUnit(line);
-
-                    if (businessUnit != null)
+                    if (lineNumber != 0)
                     {
-                        businessUnits.Add(businessUnit);
+                        BusinessUnit businessUnit = MapToBusinessUnit(line, company);
+
+                        if (businessUnit != null)
+                        {
+                            businessUnits.Add(businessUnit);
+                        }
                     }
+                    lineNumber++;
+
                 }
 
             }
@@ -37,10 +44,15 @@ namespace Compreneur.Service
             return businessUnits;
         }
 
-        private BusinessUnit MapToBusinessUnit(string data)
+        private BusinessUnit MapToBusinessUnit(string data, Company company)
         {
             string[] properties = data.Split(';');
-            return new BusinessUnit(properties[0]);
+            if (properties[0] == company.CompanyName)
+            {
+                return new BusinessUnit(properties[1]);
+
+            }
+            return null;
         }
     }
 }

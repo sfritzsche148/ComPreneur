@@ -13,7 +13,7 @@ namespace Compreneur.Service
 
         public Company LoadCompanyData(DirectoryInfo sourceDirectory, string companyName) 
         {
-            var companyConfigurationFile = sourceDirectory.EnumerateFiles(companyName + "*.txt").FirstOrDefault();
+            var companyConfigurationFile = sourceDirectory.EnumerateFiles(companyName + "Configuration.txt").FirstOrDefault();
             int lineNumber = 0;
             Company company = new Company();
             if(!companyConfigurationFile.Exists)
@@ -33,6 +33,7 @@ namespace Compreneur.Service
                         }
                         lineNumber++;
                     }
+                    
                 }
             }
 
