@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Compreneur.Views.StartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Compreneur.Views"
+             xmlns:helix="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Visibility="Visible">
+            <Button Content="Create Company"
+                    Width="200"
+                    Command="{Binding OpenCreateCompanyViewCommand}"/>
+            <Button Content="Load Company"
+            Width="200"
+            Margin="0, 10, 0, 0"
+            Command="{Binding OpenLoadCompanyViewCommand}"/>
+            <StackPanel Orientation="Horizontal">
+                <helix:HelixViewport3D x:Name="viewPort" ShowViewCube="False" Height="400" Width="250">
+                    <ModelVisual3D x:Name="modelGB1" Content="{Binding StartPageModel1}">
+                        <ModelVisual3D.Transform>
+                            <ScaleTransform3D ScaleX="2" ScaleY="2" ScaleZ="2"/>
+                        </ModelVisual3D.Transform>
+                    </ModelVisual3D>
+
+                </helix:HelixViewport3D>
+                <helix:HelixViewport3D x:Name="viewPort2" ShowViewCube="False" Height="300" Width="250">
+                    <ModelVisual3D x:Name="modelGB2" Content="{Binding StartPageModel2}">
+                        <ModelVisual3D.Transform>
+                            <ScaleTransform3D ScaleX="2" ScaleY="2" ScaleZ="2"/>
+                        </ModelVisual3D.Transform>
+                    </ModelVisual3D>
+                </helix:HelixViewport3D>
+                <helix:HelixViewport3D x:Name="viewPort3" ShowViewCube="False" Height="300" Width="250">
+                    <ModelVisual3D x:Name="modelGB3" />
+                </helix:HelixViewport3D>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

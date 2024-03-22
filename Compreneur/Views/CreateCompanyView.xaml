@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Compreneur.Views.CreateCompanyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Compreneur.Views"
+             mc:Ignorable="d"
+             xmlns:helix="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <TextBox Text="Firmenname"
+             Width="200"/>
+            <TextBox Text="Branche"
+             Width="200"/>
+            <Button Content="Gründen"
+                    Width="200"
+                    Command="{Binding CreateCompanyCommand}"/>
+            <StackPanel Orientation="Horizontal">
+                <helix:HelixViewport3D x:Name="viewPort7" ShowViewCube="False" Height="300" Width="250">
+                    <ModelVisual3D x:Name="modelGB7" />
+                </helix:HelixViewport3D>
+                <helix:HelixViewport3D x:Name="viewPort8" ShowViewCube="False" Height="300" Width="250">
+                    <ModelVisual3D x:Name="modelGB8" />
+                </helix:HelixViewport3D>
+                <helix:HelixViewport3D x:Name="viewPort9" ShowViewCube="False" Height="300" Width="250">
+                    <ModelVisual3D x:Name="modelGB9" />
+                </helix:HelixViewport3D>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
