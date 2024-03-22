@@ -1,4 +1,7 @@
-﻿using Compreneur.ViewModels;
+﻿using Autofac;
+using Compreneur.IoC;
+using Compreneur.Models;
+using Compreneur.ViewModels;
 using HelixToolkit.Wpf;
 using System;
 using System.Collections.Generic;
@@ -26,7 +29,7 @@ namespace Compreneur
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
+            DataContext = IoCContainer.Current.Resolve<MainWindowViewModel>();
         }
     }
 }

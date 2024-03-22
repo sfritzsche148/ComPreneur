@@ -17,12 +17,42 @@ namespace Compreneur.ViewModels
 {
     internal class MainWindowViewModel : ViewModelBase
     {
+        private readonly StartViewModel _startViewModel;
+
+
+        public string WindowTitle { get; set; } = "Compreneur";
+
+        private Navigation _navigation;
+
+        public Navigation Navigation
+        {
+            get { return _navigation; }
+            set { _navigation = value;  }
+        }
+
+
+        public MainWindowViewModel(StartViewModel startViewModel, Navigation navigation )
+        {
+            _startViewModel = startViewModel;
+            _navigation = navigation;
+            _navigation.CurrentViewModel = _startViewModel;
+            _navigation.CurrentViewModelChanged += CurrentViewModelChanged;
+        }
+
+        public void CurrentViewModelChanged()
+        {
+            RaisePropertyChanged(nameof(Navigation));
+        }
+
+        /*
+
         private readonly LoadCompanyService _loadCompanyService;
         private readonly LoadLocationService _loadLocationService;
         private readonly LoadBuildingService _loadBuildingService;
         private readonly LoadBusinessUnitsService _loadBusinessUnitsService;
 
         public Company Company { get; set; }
+
 
         public List<Location> Locations { get; set; }
         public List<Building> Buildings { get; set; }
@@ -173,6 +203,6 @@ namespace Compreneur.ViewModels
                     modelNumber++;
                 }
             }
-        }
+        } */
     }
 }
