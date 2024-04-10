@@ -55,8 +55,7 @@ namespace Compreneur.Service
             if (!String.IsNullOrEmpty(data))
             {
                 string[] properties = data.Split(';');
-                return new Building(properties[0], properties[1]);
-
+                return new Building() { BuildingType = Enums.BuildingType.Buero1, BuildingName = "ST1"}; // erstmal nur demo werte
             }
             return null;
         }

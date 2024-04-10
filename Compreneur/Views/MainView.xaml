@@ -8,46 +8,79 @@
              xmlns:helix="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <StackPanel Orientation="Horizontal"
-                HorizontalAlignment="Center">
-                <Button Content="Unternehmensübersicht"
-                Margin="0, 0, 20, 0"/>
-                <Button Content="Aufträge"
-                Margin="20, 0, 20, 0"/>
-                <Button Content="Mitarbeiter"/>
-            </StackPanel>
-            <!-- Gebäude Liste-->
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Width="100" HorizontalAlignment="Left">
-                    <Button Content="GB1" 
-                    Margin="0, 40, 0, 20"/>
-                    <Button Content="GB2"
-                    Margin="0, 20"/>
-                    <Button Content="GB3"
-                    Margin="0, 20"/>
-                </StackPanel>
-                <!-- Standort View -->
+        <Grid.ColumnDefinitions>
+            <!--Building Overview-->
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <!--Location Overview-->
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button Content="Unternehmensübersicht"
+                Margin="20, 0, 20, 0"
+                Grid.Row="0"
+                Grid.Column="1"/>
+        <Button Content="Aufträge"
+                Margin="20, 0, 20, 0"
+                Grid.Row="0"
+                Grid.Column="2"/>
+        <Button Content="Mitarbeiter"
+                Margin="20, 0, 20, 0"
+                Grid.Row="0"
+                Grid.Column="3"/>
+        <!-- Gebäude Liste-->
+        <Button Content="GB1" 
+                Margin="0, 40, 0, 20"
+                Grid.Row="1"
+                Grid.Column="0"/>
+        <Button Content="GB2"
+                Margin="0, 20"
+                Grid.Row="2"
+                Grid.Column="0"/>
+        <Button Content="GB3"
+                Margin="0, 20"
+                Grid.Row="3"
+                Grid.Column="0"/>
+        <!-- Standort View -->
+        <helix:HelixViewport3D Grid.Row="1"
+                               Grid.RowSpan="3"
+                               Grid.Column="2"
+                               ShowViewCube="False">
+            <ModelVisual3D x:Name="modelGB4" Content="{Binding MainBuildingModel.Model}" />
+        </helix:HelixViewport3D>
+        <!-- Standort Liste-->
+        <Button Content="ST1" 
+                Margin="0, 40, 0, 20"
+                Grid.Row="1"
+                Grid.Column="4"/>
+        <Button Content="ST2"
+                Margin="0, 20"
+                Grid.Row="2"
+                Grid.Column="4"/>
+        <Button Content="ST3"
+                Margin="0, 20"
+                Grid.Row="3"
+                Grid.Column="4"/>
 
-                <!-- Standort Liste-->
-                <StackPanel Width="100" HorizontalAlignment="Right"
-                    >
-                    <Button Content="GB1" 
-                    Margin="0, 40, 0, 20"/>
-                    <Button Content="GB2"
-                    Margin="0, 20"/>
-                    <Button Content="GB3"
-                    Margin="0, 20"/>
-                </StackPanel>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal"
-                HorizontalAlignment="Center">
-                <Button Content="Abteilungen"
-                Margin="0, 0, 20, 0"/>
-                <Button Content="Sales"
-                Margin="20, 0, 20, 0"/>
-                <Button Content="Marketing"/>
-            </StackPanel>
-        </StackPanel>
+        <Button Content="Abteilungen"
+                Margin="20, 0, 20, 0"
+                Grid.Row="4"
+                Grid.Column="1"/>
+        <Button Content="Sales"
+                Margin="20, 0, 20, 0"
+                Grid.Row="4"
+                Grid.Column="2"/>
+        <Button Content="Marketing"
+                Margin="20, 0, 20, 0"
+                Grid.Row="4"
+                Grid.Column="3"/>
     </Grid>
 </UserControl>

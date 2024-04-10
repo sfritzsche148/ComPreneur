@@ -1,10 +1,12 @@
 ﻿using Compreneur.Commands;
 using Compreneur.Models;
+using HelixToolkit.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Media3D;
 
 namespace Compreneur.ViewModels
 {
@@ -17,6 +19,8 @@ namespace Compreneur.ViewModels
 
         public ActionCommand CreateCompanyCommand { get; set; }
 
+        public Model3D CreateCompanyModel { get; set; }
+
         public CreateCompanyViewModel(MainViewModel mainViewModel, Navigation navigation)
         {
             Navigation = navigation;
@@ -24,6 +28,8 @@ namespace Compreneur.ViewModels
             _mainViewModel = mainViewModel;
 
             CreateCompanyCommand = new ActionCommand(CreateCompany, CanCreateCompany);
+            ModelImporter imp = new ModelImporter();
+            CreateCompanyModel = imp.Load($"C:\\Users\\Sebastian\\OneDrive\\03_Sonstiges\\Dokumente\\My Games\\Compreneur\\buero1.obj");
         }
 
         public bool CanCreateCompany()

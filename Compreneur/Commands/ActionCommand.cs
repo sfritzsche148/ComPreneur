@@ -28,4 +28,22 @@ namespace Compreneur.Commands
             _execute();
         }
     }
+
+    internal class ActionCommand<T> : ICommand
+    {
+        public event EventHandler CanExecuteChanged;
+        private Action<T> _execute { get; set; }
+        private Func<T, bool> _canExecute { get; set; }
+
+        public bool CanExecute(object parameter)
+        {
+
+            return _canExecute((T)parameter);
+        }
+
+        public void Execute(object parameter)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
