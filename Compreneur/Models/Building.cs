@@ -4,30 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Media3D;
 
 namespace Compreneur.Models
 {
     internal class Building
     {
         public string BuildingName { get; set; }
-        public BuildingType BuildingType { get; set; }
 
-        public Building(string name, string buildingType)
+        private BuildingType _buildingType;
+
+        public BuildingType BuildingType
         {
-            BuildingName = name;
-
-            switch(buildingType)
-            {
-                case "buero1":
-                    BuildingType = BuildingType.Buero1;
-                    break;
-                case "buero2":
-                    BuildingType = BuildingType.Buero2;
-                    break;
-                case "factory1":
-                    BuildingType = BuildingType.Factory1;
-                    break;
-            }
+            get { return _buildingType; }
+            set { _buildingType = value;}
         }
+
+        public Model3D Model { get; set; }
+
     }
 }

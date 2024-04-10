@@ -16,13 +16,7 @@
                      Command="{Binding LoadCompanyCommand}"/>
             <StackPanel Orientation="Horizontal">
                 <helix:HelixViewport3D x:Name="viewPort4" ShowViewCube="False" Height="300" Width="250">
-                    <ModelVisual3D x:Name="modelGB4" />
-                </helix:HelixViewport3D>
-                <helix:HelixViewport3D x:Name="viewPort5" ShowViewCube="False" Height="300" Width="250">
-                    <ModelVisual3D x:Name="modelGB5" />
-                </helix:HelixViewport3D>
-                <helix:HelixViewport3D x:Name="viewPort6" ShowViewCube="False" Height="300" Width="250">
-                    <ModelVisual3D x:Name="modelGB6"/>
+                    <ModelVisual3D x:Name="modelGB4" Content="{Binding LoadCompanyModel}" />
                 </helix:HelixViewport3D>
             </StackPanel>
         </StackPanel>

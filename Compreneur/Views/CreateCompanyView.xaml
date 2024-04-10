@@ -16,17 +16,9 @@
             <Button Content="Gründen"
                     Width="200"
                     Command="{Binding CreateCompanyCommand}"/>
-            <StackPanel Orientation="Horizontal">
-                <helix:HelixViewport3D x:Name="viewPort7" ShowViewCube="False" Height="300" Width="250">
-                    <ModelVisual3D x:Name="modelGB7" />
-                </helix:HelixViewport3D>
-                <helix:HelixViewport3D x:Name="viewPort8" ShowViewCube="False" Height="300" Width="250">
-                    <ModelVisual3D x:Name="modelGB8" />
-                </helix:HelixViewport3D>
-                <helix:HelixViewport3D x:Name="viewPort9" ShowViewCube="False" Height="300" Width="250">
-                    <ModelVisual3D x:Name="modelGB9" />
-                </helix:HelixViewport3D>
-            </StackPanel>
+            <helix:HelixViewport3D x:Name="viewPort7" ShowViewCube="False" Height="300" Width="250">
+                <ModelVisual3D x:Name="modelGB7" Content="{Binding CreateCompanyModel}"/>
+             </helix:HelixViewport3D>
         </StackPanel>
     </Grid>
 </UserControl>

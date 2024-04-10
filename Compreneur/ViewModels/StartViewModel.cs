@@ -1,11 +1,14 @@
 ﻿using Compreneur.Commands;
 using Compreneur.Models;
+using HelixToolkit.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
+using System.Windows.Media.Media3D;
 
 namespace Compreneur.ViewModels
 {
@@ -26,6 +29,8 @@ namespace Compreneur.ViewModels
             set { _navigation = value; RaisePropertyChanged(nameof(Navigation)); }
         }
 
+        public Model3D StartPageModel1 { get; set; }
+
 
         public StartViewModel(LoadCompanyViewModel loadCompanyViewModel, CreateCompanyViewModel createCompanyViewModel, Navigation navigation)
         {
@@ -34,6 +39,8 @@ namespace Compreneur.ViewModels
             _createCompanyViewModel = createCompanyViewModel;
             OpenLoadCompanyViewCommand = new ActionCommand(OpenLoadCompanyView, CanOpenLoadComapanyView);
             OpenCreateCompanyViewCommand = new ActionCommand(OpenCreateCompanyView, CanOpenCreateComapanyView);
+            ModelImporter imp = new ModelImporter();
+            StartPageModel1 = imp.Load($"C:\\Users\\Sebastian\\OneDrive\\03_Sonstiges\\Dokumente\\My Games\\Compreneur\\buero1.obj");
         }
 
         public bool CanOpenLoadComapanyView()

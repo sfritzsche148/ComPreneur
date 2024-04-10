@@ -50,7 +50,12 @@
                 Grid.Row="3"
                 Grid.Column="0"/>
         <!-- Standort View -->
-
+        <helix:HelixViewport3D Grid.Row="1"
+                               Grid.RowSpan="3"
+                               Grid.Column="2"
+                               ShowViewCube="False">
+            <ModelVisual3D x:Name="modelGB4" Content="{Binding MainBuildingModel.Model}" />
+        </helix:HelixViewport3D>
         <!-- Standort Liste-->
         <Button Content="ST1" 
                 Margin="0, 40, 0, 20"
