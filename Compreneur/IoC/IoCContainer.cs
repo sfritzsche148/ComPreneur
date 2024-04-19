@@ -33,6 +33,7 @@ namespace Compreneur.IoC
             builder.RegisterType<LoadCompanyViewModel>().SingleInstance();
             builder.RegisterType<CreateCompanyViewModel>().SingleInstance();
             builder.RegisterType<MainViewModel>().SingleInstance();
+            builder.RegisterType<CompanyOverViewViewModel>().SingleInstance();
 
             Current = builder.Build();
         }

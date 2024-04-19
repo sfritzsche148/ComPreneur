@@ -20,7 +20,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Firmenname + RF"
+        <TextBlock Text="{Binding Company.CompanyName}"
                    Grid.Row="0"
                    Grid.ColumnSpan="2"
                    VerticalAlignment="Center"

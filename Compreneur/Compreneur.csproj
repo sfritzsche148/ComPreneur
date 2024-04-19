@@ -91,6 +91,7 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Navigation.cs" />
     <Compile Include="Models\ViewModelTransfer.cs" />
+    <Compile Include="Service\CalculateCompanyData.cs" />
     <Compile Include="Service\CheckCompanyExistsService.cs" />
     <Compile Include="Service\CreateBusinessUnitService.cs" />
     <Compile Include="Service\CreateCompanyService.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Service\LoadBusinessUnitsService.cs" />
     <Compile Include="Service\LoadCompanyService.cs" />
     <Compile Include="Service\LoadLocationService.cs" />
+    <Compile Include="ViewModels\CompanyOverViewViewModel.cs" />
     <Compile Include="ViewModels\CreateCompanyViewModel.cs" />
     <Compile Include="ViewModels\LoadCompanyViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

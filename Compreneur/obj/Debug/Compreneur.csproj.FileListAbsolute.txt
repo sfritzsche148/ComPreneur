@@ -42,3 +42,5 @@ C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Views\StartView.
 C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Views\MainView.baml
 C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Views\StartView.baml
 C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Views\CompanyOverView.g.cs
+C:\Users\Sebastian\source\repos\ComPreneur\Compreneur\obj\Debug\Views\CompanyOverView.baml

@@ -1,10 +1,12 @@
-﻿using Compreneur.Models;
+﻿using Compreneur.Enums;
+using Compreneur.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Automation.Peers;
 
 namespace Compreneur.Service
 {
@@ -45,12 +47,37 @@ namespace Compreneur.Service
         private Company MapToCompany(string data)
         {
             string[] properties = data.Split(';');
+            Company company = new Company();
 
-            return new Company()
+            LegalForms legalForm = new LegalForms();
+            switch(properties[1])
             {
-                CompanyName = properties[0],
-                //CompanyRechtsform =
-            };
+                case "GmbH":
+                    legalForm = LegalForms.GmbH;
+                    break;
+            }
+
+
+            var locationNames = properties[7].Split(',');
+
+
+            company.CompanyName = properties[0];
+            company.CompanyLegalForm = legalForm;
+            company.CompanyBranche = properties[2];
+            company.CompanyEmployeeCount = int.Parse(properties[3]);
+            company.CompanyMonthlySales = float.Parse(properties[4]);
+            company.CompanyYearSales = float.Parse(properties[5]);
+            company.CompanyLocationCount = int.Parse(properties[6]);
+            company.CompanyLocationNames = locationNames;
+            company.CompanyYearEconomics = float.Parse(properties[8]);
+            company.CompanyProfitability = float.Parse(properties[9]);
+            company.CompanyWorkProductivity = float.Parse(properties[10]);
+            company.CompanyMachineProductivity = float.Parse(properties[11]);
+            company.CompanyMaterialProductivity = float.Parse(properties[12]);
+            company.CompanyMonthlyProfit = float.Parse(properties[13]);
+            company.CompanyYearProfit = float.Parse(properties[14]);
+
+            return company;
         }
     }
 }

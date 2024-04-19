@@ -10,7 +10,7 @@ namespace Compreneur.Models
     internal class ViewModelTransfer
     {
         public string CompanyName { get; set; }
-        public Rechtsform CompanyLegalForm { get; set; }
+        public LegalForms CompanyLegalForm { get; set; }
         public Branche CompanyBranche { get; set; }
         public int CompanyEmployeeCount { get; set; }
         public float CompanyMonthlySales { get; set; }

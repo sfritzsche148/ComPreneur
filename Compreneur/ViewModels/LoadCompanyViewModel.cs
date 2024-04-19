@@ -1,9 +1,11 @@
 ﻿using Compreneur.Commands;
 using Compreneur.Models;
+using Compreneur.Service;
 using Compreneur.Views;
 using HelixToolkit.Wpf;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,7 @@ namespace Compreneur.ViewModels
     {
 
         private readonly MainViewModel _mainViewModel;
+        private readonly LoadCompanyService _loadCompanyService;
 
         public Navigation Navigation { get; set; }
 
@@ -25,9 +28,10 @@ namespace Compreneur.ViewModels
         public Model3D LoadCompanyModel { get; set; }
 
 
-        public LoadCompanyViewModel(MainViewModel mainViewModel, Navigation navigation)
+        public LoadCompanyViewModel(MainViewModel mainViewModel, Navigation navigation, LoadCompanyService loadCompanyService)
         {
             Navigation = navigation;
+            _loadCompanyService = loadCompanyService;
 
             _mainViewModel = mainViewModel;
             LoadCompanyCommand = new ActionCommand(LoadCompany, CanLoadCompany);
@@ -52,6 +56,7 @@ namespace Compreneur.ViewModels
         public void LoadCompany()
         {
             Navigation.CurrentViewModel = _mainViewModel;
+            _mainViewModel.Company = _loadCompanyService.LoadCompanyData(new DirectoryInfo("C:\\Users\\Sebastian\\OneDrive\\03_Sonstiges\\Dokumente\\My Games\\Compreneur"), "testCompany");
         }
     }
 }

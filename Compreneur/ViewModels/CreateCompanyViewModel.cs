@@ -17,6 +17,8 @@ namespace Compreneur.ViewModels
 
         public Navigation Navigation { get; set; }
 
+        public ViewModelTransfer ViewModelTransfer { get; set; }
+
         public ActionCommand CreateCompanyCommand { get; set; }
 
         public Model3D CreateCompanyModel { get; set; }
@@ -26,6 +28,7 @@ namespace Compreneur.ViewModels
             Navigation = navigation;
 
             _mainViewModel = mainViewModel;
+            ViewModelTransfer = new ViewModelTransfer();
 
             CreateCompanyCommand = new ActionCommand(CreateCompany, CanCreateCompany);
             ModelImporter imp = new ModelImporter();
